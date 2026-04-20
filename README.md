@@ -17,7 +17,12 @@ Edad: Factor determinante; se observa una distribución distinta entre quienes s
 No existen correlación lienal evidente entre las variables predictoras.
 Las variables predictoras manifiestan una distrubución normal o uniforme(Antigüedad y Salario Estimado). 
 
- ![Distribucion de las variables](img/pair_plot.png)
+![Distribucion de las variables num](img/pair_plot.png)
+
+![Distribucion de las variables cat](img/evento_en_categorías.png)
+
+
+ 
 
 
 ## Modelado: Entrenamiento y optimización de hiperparámetros mediante validación cruzada para los siguientes algoritmos:
