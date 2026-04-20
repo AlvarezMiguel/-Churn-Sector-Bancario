@@ -16,8 +16,8 @@ Score Crediticio, Ciudad, Sexo, Edad, Antigüedad, Balance, Número de Productos
 Edad: Factor determinante; se observa una distribución distinta entre quienes se van y quienes se quedan.
 No existen correlación lienal evidente entre las variables predictoras.
 Las variables predictoras manifiestan una distrubución normal o uniforme(Antigüedad y Salario Estimado). 
- 
- `img/pair_plot.png` 
+
+ ![Distribucion de las variables](img/pair_plot.png)
 
 
 ## Modelado: Entrenamiento y optimización de hiperparámetros mediante validación cruzada para los siguientes algoritmos:
