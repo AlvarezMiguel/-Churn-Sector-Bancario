@@ -9,11 +9,16 @@ Utilizando técnicas de Machine Learning se busca identificar a los clientes en 
 * **Lenguaje:** R
 * **Librerías principales:** `tidymodels`, `themis` (para SMOTENC), `psych`, `ggplot2` (visualización).
 
+## Variables predictoras : 
+Score Crediticio, Ciudad, Sexo, Edad, Antigüedad, Balance, Número de Productos, Tarjeta de Crédito, Actividad y Salario Estimado
 
 ## Hallazgos del Análisis Exploratorio (EDA)
 Edad: Factor determinante; se observa una distribución distinta entre quienes se van y quienes se quedan.
+No existen correlación lienal evidente entre las variables predictoras.
+Las variables predictoras manifiestan una distrubución normal o uniforme(Antigüedad y Salario Estimado). 
+ 
+ `img/pair_plot.png` 
 
-## Variables predictoras : Score Crediticio, Ciudad, Sexo, Edad, Antigüedad, Balance, Número de Productos, Tarjeta de Crédito, Actividad y Salario Estimado
 
 ## Modelado: Entrenamiento y optimización de hiperparámetros mediante validación cruzada para los siguientes algoritmos:
    - K-Nearest Neighbors (KNN)
