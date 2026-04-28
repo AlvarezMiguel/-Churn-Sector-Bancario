@@ -23,12 +23,17 @@ Las variables predictoras manifiestan una distrubución normal o uniforme(Antig�
 
 
 ## Entrenamiento y optimización de hiperparámetros mediante validación cruzada para los siguientes algoritmos:
-   - K-Nearest Neighbors (KNN)
-   - Naive Bayes
-   - Support Vector Machines (Lineal, Radial, Polinomial)
-   - Random Forest
-   - Redes Neuronales
-   - Modelo de Ensamble
+Se empleó el algoritmo K-Nearest Neighbors (KNN) optimizando los hiperparámetros correspondientes al número de vecinos y funciones de peso. 
+- En entrenamiento, el modelo reportó un ROC AUC  de **0.803** lo cual indica una capacidad sólida para distinguir entre los dos eventos de interés (el cliente abandona o no).
+- En producción el modelo logra un ROC AUC de **0.79**, que demuestra una capacidad predictiva consistente:
+  
+| Métrica       | Valor |
+| ------------- | ------ |
+| Precisión     | 0.74 |
+| Sensibilidad  | 0.75 |
+| Especificidad | 0.69 |
+| ROC AUC       | 0.79 |
+  
 
 ##  Resultados Destacados
 
