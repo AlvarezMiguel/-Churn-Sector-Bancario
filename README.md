@@ -25,23 +25,34 @@ Las variables predictoras manifiestan una distrubución normal o uniforme(Antig�
 ## Entrenamiento y optimización de hiperparámetros mediante validación cruzada para los siguientes algoritmos:
 Se empleó el algoritmo K-Nearest Neighbors (KNN) optimizando los hiperparámetros correspondientes al número de vecinos y funciones de peso. 
 - En entrenamiento, el modelo reportó un ROC AUC  de **0.803** lo cual indica una capacidad sólida para distinguir entre los dos eventos de interés (el cliente abandona o no).
-- En producción el modelo logra un ROC AUC de **0.79**, que demuestra una capacidad predictiva consistente:
-  
+- En fase de prueba el modelo logra un ROC AUC de **0.79**, que demuestra una capacidad predictiva consistente:
+
 | Métrica       | Valor |
 | ------------- | ------ |
 | Precisión     | 0.74 |
-| Sensibilidad  | 0.75 |
-| Especificidad | 0.69 |
+| Sensibilidad  | 0.69 |
+| Especificidad | 0.75 |
 | ROC AUC       | 0.79 |
+
+
   
-
 ##  Resultados Destacados
+Una presición de 0.74 no indica que el modelo clasifica correctamente el 74% de los clientes.
+De los clientes que sí abandonaron, el modelo detecta correctamente 69%.
+De los cleintes que no abandonaron, el modelo detecta correctamente 75%.
 
-Los modelos demostraron una **alta capacidad** para identificar a los clientes que no abandonan el banco, siendo el desafío principal la predicción precisa de la clase positiva (abandono).
+De acuerdo con la matriz de confunsión:
 
-* [cite_start]**Random Forest:** Alcanzó un Accuracy de **0.866** y un área bajo la curva (AUC) de **0.869**[cite: 1866]. [cite_start]Se identificó que la Edad, el Número de Productos y el Saldo (Balance) son las variables más determinantes[cite: 2166, 2174].
-* [cite_start]**Redes Neuronales:** Logró un Accuracy de **0.818** y un AUC de **0.868**[cite: 1995].
-* [cite_start]**Ensamble:** Combinando los modelos, se obtuvo un AUC de **0.868** con una excelente especificidad (96.1%), demostrando gran eficacia para distinguir las clases[cite: 2045, 2047, 2049].
+| Predicció\Realidad  | Sí abandonó | No abandonó |
+| Sí abandonó         |     426     |   593       |
+| No abandonó         |     186     |  1796       | 
+
+El ROC AUC = 0.804, indica una buena capacidad de discriminación.
+En el 80.4% de los casos, el modelo asigna mayor probabilidad de abandono a un cliente que sí abandona a uno que no.
+- 4 de cada 10 clientes marcados como "Sí abandonó" realmente abandonan el banco.
+- 9 de cada 10 cleintes marcados como "No abandonó" realemnte no abandonan el banco
+El modelo resulta conveniente para filtrar clientes de bajo riesgo con alta convianza (90 %)
+
 
 *(Agrega aquí imágenes de `img/curva_roc_random_forest.png` y `img/importancia_variables.png` usando sintaxis Markdown: `![Curva ROC](ruta_a_la_imagen)`)*
 
