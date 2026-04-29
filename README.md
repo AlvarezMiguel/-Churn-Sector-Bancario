@@ -55,12 +55,18 @@ Por lo tanto el modelo resulta altamente conveniente para filtrar clientes de ba
 
 
 ## Análisis de variables de mayor impacto. 
-Una de las ventajas de implementar modelos de tipo KNN, es que permite realizar un análsis del impacto de cada variable en la predicció y también permite analizar clientes específicos para comprender a detalle por qué toma la desición de irse o quedarse. 
+Una de las ventajas de implementar modelos de tipo KNN, es que permite realizar un análsis del impacto de cada variable en la predicción y también permite analizar clientes específicos para comprender a detalle por qué toma la desición de irse o quedarse. 
 
 Gracias a este análisis es posible orientar campañas de retención a segmentos críticos de la población de clientes con características específicas. 
 
 ### Importancia de las variables.
-- La **Edad**
+- La **Edad** es el factor determinante 
+- El **Número de productos**, el **Balance**, la **Antigüedad**, y el **Salario** son factores críticos auqnue con menor peso en la decisión, a continuación se ilustra la **probabilidad promedio** de abandono en función de las variables **Edad**, **NumProds** y **Balance** .
 
+![variables_importantes](img/var_importantes.png)  
 
-
+![pdp_importantes](img/pdp_importantes.png)  
+  
+Como se obsrvan en las gráficas anteriores, las relaciones de estas variables con la probabilidad promedio de abandono son complejas. Es aquí donde podemos contrastar estos resultados y las visulaizaciones hechas en la fase exploratoria. 
+- Inicialmente, el análisis exploratorio sugería una la relación directamente proporcional entre la edad y el número de clientes que abandonan el banco  (El promedio de clientes que abandonan el banco es mayor que el promedio de clientes que no abandonan el banco ). En la gráfica de Depenndencia parcial de la Edad, se observa un mayor riesgo de abandono en clientes menores cuya edad se encuentra entre 20 y 45 años, así como mayores a 80 años. Pero se observa un bajo reisgo de abandono en clientes con edades mayores a 45 años y menores a 80.  
+- Análogamente en cleintes 
