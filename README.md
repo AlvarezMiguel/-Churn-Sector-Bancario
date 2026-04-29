@@ -25,38 +25,42 @@ Las variables predictoras manifiestan una distrubución normal o uniforme(Antig�
 ## Entrenamiento y optimización de hiperparámetros mediante validación cruzada para los siguientes algoritmos:
 Se empleó el algoritmo K-Nearest Neighbors (KNN) optimizando los hiperparámetros correspondientes al número de vecinos y funciones de peso. 
 - En entrenamiento, el modelo reportó un ROC AUC  de **0.803** lo cual indica una capacidad sólida para distinguir entre los dos eventos de interés (el cliente abandona o no).
-- En fase de prueba el modelo logra un ROC AUC de **0.79**, que demuestra una capacidad predictiva consistente:
+- En fase de prueba el modelo logra un ROC AUC de **0.79**, lo que demuestra una capacidad predictiva consistente:
 
 | Métrica       | Valor |
-| ------------- | ------ |
+| ------------- | ------|
 | Precisión     | 0.74 |
 | Sensibilidad  | 0.69 |
 | Especificidad | 0.75 |
-| ROC AUC       | 0.79 |
-
+| ROC AUC       | 0.80 |
 
   
 ##  Resultados Destacados
-Una presición de 0.74 no indica que el modelo clasifica correctamente el 74% de los clientes.
-De los clientes que sí abandonaron, el modelo detecta correctamente 69%.
-De los cleintes que no abandonaron, el modelo detecta correctamente 75%.
+- Una presición de 0.74  indica que el modelo clasifica correctamente el 74% de los clientes.
+- De los clientes que sí abandonaron, el modelo detecta correctamente 69%.
+- De los cleintes que no abandonaron, el modelo detecta correctamente 75%.
 
-De acuerdo con la matriz de confunsión:
+Matriz de confunsión:
 
 | Predicció\Realidad  | Sí abandonó | No abandonó |
+| ------------------- |------------ | ----------- |
 | Sí abandonó         |     426     |   593       |
 | No abandonó         |     186     |  1796       | 
 
-El ROC AUC = 0.804, indica una buena capacidad de discriminación.
-En el 80.4% de los casos, el modelo asigna mayor probabilidad de abandono a un cliente que sí abandona a uno que no.
+
 - 4 de cada 10 clientes marcados como "Sí abandonó" realmente abandonan el banco.
-- 9 de cada 10 cleintes marcados como "No abandonó" realemnte no abandonan el banco
-El modelo resulta conveniente para filtrar clientes de bajo riesgo con alta convianza (90 %)
+- 9 de cada 10 clientes marcados como "No abandonó" realemnte no abandonan el banco.
+
+Por lo tanto el modelo resulta altamente conveniente para filtrar clientes de bajo riesgo con alta confianza (90 %). 
 
 
-*(Agrega aquí imágenes de `img/curva_roc_random_forest.png` y `img/importancia_variables.png` usando sintaxis Markdown: `![Curva ROC](ruta_a_la_imagen)`)*
+## Análisis de variables de mayor impacto. 
+Una de las ventajas de implementar modelos de tipo KNN, es que permite realizar un análsis del impacto de cada variable en la predicció y también permite analizar clientes específicos para comprender a detalle por qué toma la desición de irse o quedarse. 
 
-## Experimentos Adicionales
-Para evaluar la robustez de los modelos, se replicó el análisis bajo dos escenarios:
-1.  [cite_start]**Transformación PCA:** Modelado sobre el subespacio de dimensión reducida (7 componentes)[cite: 2068, 2069].
+Gracias a este análisis es posible orientar campañas de retención a segmentos críticos de la población de clientes con características específicas. 
+
+### Importancia de las variables.
+- La **Edad**
+
+
 
