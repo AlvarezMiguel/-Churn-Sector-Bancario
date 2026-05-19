@@ -46,6 +46,7 @@ Se empleó el algoritmo K-Nearest Neighbors (KNN) optimizando los hiperparámetr
 ### Importancia de las variables.
 Una de las ventajas de implementareste modelo, es que permite realizar un análsis del impacto de cada variable en la predicción y también permite analizar clientes específicos para comprender a detalle por qué toma la desición de irse o quedarse. 
 Las variables críticas que más influencían la desición de abandono, son las siguientes :
+
 ![Importancia de variables](img/importancia_var.png)
 
 - La **Edad** es el factor determinante, seguido por el **Número de porductos contratados** 
@@ -53,11 +54,15 @@ Las variables críticas que más influencían la desición de abandono, son las 
 - Un hallazgo importante fue la identificación de Alemania como factor de riesgo de abandono.  
 
 A continuación se presenta las gráficas de dependencia parcial, las cuales permiten visualizar el comportamiento de la probabilidad de abandono de las variables críticas identificadas de acueerdo con el modelo.
-![variables](img/var_importantes.png)  
 
 ![pdp_importantes](img/cinco_variables_pdp.png)  
   
-Las gráficas anteriores permiten permiten . Es aquí donde podemos contrastar estos resultados y las visulaizaciones hechas en la fase exploratoria. 
+Este análisis  permite detallar la relación compleja entre las variables críticas y la probabailidad de abandono de manera global.
 
-- Inicialmente, el análisis exploratorio sugería una la relación directamente proporcional entre la edad y el número de clientes que abandonan el banco  (El promedio de clientes que abandonan el banco es mayor que el promedio de clientes que no abandonan el banco ). En la gráfica de dependencia parcial de la Edad, se observa un mayor riesgo de abandono en clientes menores cuya edad se encuentra entre 20 y 45 años, así como mayores a 80 años. Pero se observa un bajo reisgo de abandono en clientes con edades mayores a 45 años y menores a 80.  
-- Análogamente en cleintes 
+## Análisis de casos específicos 
+Este procedimiento responde a la pregunta ¿por qué un cliente en especial (caso de interés) decidió abandonar o no abandonar el banco ?
+Los resultados se logran mediante el método SHAP (SHapley Additive exPlanations) que permite estimar la contribución de cada característica a una predicción individual de un modelo de machine learning, es decir , permite descomponer una predicción compleja en contribuciones individuales.
+
+![SHap](img/cleintes_20_y_3.png)  
+
+
