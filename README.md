@@ -60,7 +60,7 @@ A continuación se presenta las gráficas de dependencia parcial, las cuales per
 Este análisis  permite detallar la relación compleja entre las variables críticas y la probabailidad de abandono de manera global.
 
 ## Análisis de casos específicos 
-Este procedimiento responde a la pregunta ¿por qué un cliente en especial (caso de interés) decidió abandonar o no abandonar el banco ?
+Este procedimiento responde a la pregunta **¿por qué un cliente en especial (caso de interés) decidió abandonar o no abandonar el banco ?**
 Los resultados se logran mediante el método SHAP (SHapley Additive exPlanations) que permite estimar la contribución de cada característica a una predicción individual de un modelo de machine learning, es decir , permite descomponer una predicción compleja en contribuciones individuales.
 
 ![SHap](img/cleintes_20_y_3.png)  
