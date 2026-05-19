@@ -17,56 +17,47 @@ Edad: Factor determinante; se observa una distribución distinta entre quienes s
 No existen correlación lienal evidente entre las variables predictoras.
 Las variables predictoras manifiestan una distrubución normal o uniforme(Antigüedad y Salario Estimado). 
 
-![Distribucion de las variables num](img/pair_plot.png)
+![Distribucion de las variables num](img/pairplot.png)
 
-![Distribucion de las variables cat](img/evento_en_categorías.png)
+![Distribucion de las variables cat](img/evento_en_cat.png)
 
 
 ## Entrenamiento y optimización de hiperparámetros mediante validación cruzada para los siguientes algoritmos:
 Se empleó el algoritmo K-Nearest Neighbors (KNN) optimizando los hiperparámetros correspondientes al número de vecinos y funciones de peso. 
-- En entrenamiento, el modelo reportó un ROC AUC  de **0.803** lo cual indica una capacidad sólida para distinguir entre los dos eventos de interés (el cliente abandona o no).
-- En fase de prueba el modelo logra un ROC AUC de **0.79**, lo que demuestra una capacidad predictiva consistente:
+- En entrenamiento, el modelo reportó un ROC AUC  de **0.826** lo cual indica una capacidad sólida para distinguir entre los dos eventos de interés (el cliente abandona o no).
+- En fase de prueba el modelo logra un ROC AUC de **0.821**, lo que demuestra una capacidad predictiva consistente, a continuación se presentan los resultados que describen el desempeño del modelo, as:
 
 | Métrica       | Valor |
 | ------------- | ------|
 | Precisión     | 0.74 |
-| Sensibilidad  | 0.69 |
+| Sensibilidad  | 0.71 |
 | Especificidad | 0.75 |
-| ROC AUC       | 0.80 |
+| ROC AUC       | 0.82 |
 
+![Curva de ROC y Matrz de confusión](img/curva_y_mat.png)
   
 ##  Resultados Destacados
 - Una presición de 0.74  indica que el modelo clasifica correctamente el 74% de los clientes.
-- De los clientes que sí abandonaron, el modelo detecta correctamente 69%.
+- De los clientes que sí abandonaron, el modelo detecta correctamente 71%.
 - De los cleintes que no abandonaron, el modelo detecta correctamente 75%.
-
-Matriz de confunsión:
-
-| Predicció\Realidad  | Sí abandonó | No abandonó |
-| ------------------- |------------ | ----------- |
-| Sí abandonó         |     426     |   593       |
-| No abandonó         |     186     |  1796       | 
-
-
-- 4 de cada 10 clientes marcados como "Sí abandonó" realmente abandonan el banco.
-- 9 de cada 10 clientes marcados como "No abandonó" realemnte no abandonan el banco.
-
-Por lo tanto el modelo resulta altamente conveniente para filtrar clientes de bajo riesgo con alta confianza (90 %). 
 
 
 ## Análisis de variables de mayor impacto. 
-Una de las ventajas de implementar modelos de tipo KNN, es que permite realizar un análsis del impacto de cada variable en la predicción y también permite analizar clientes específicos para comprender a detalle por qué toma la desición de irse o quedarse. 
-
-Gracias a este análisis es posible orientar campañas de retención a segmentos críticos de la población de clientes con características específicas. 
-
 ### Importancia de las variables.
-- La **Edad** es el factor determinante 
-- El **Número de productos**, el **Balance**, la **Antigüedad**, y el **Salario** son factores críticos auqnue con menor peso en la decisión, a continuación se ilustra la **probabilidad promedio** de abandono en función de las variables **Edad**, **NumProds** y **Balance** .
+Una de las ventajas de implementareste modelo, es que permite realizar un análsis del impacto de cada variable en la predicción y también permite analizar clientes específicos para comprender a detalle por qué toma la desición de irse o quedarse. 
+Las variables críticas que más influencían la desición de abandono, son las siguientes :
+![Importancia de variables](img/importancia_var.png)
 
-![variables_importantes](img/var_importantes.png)  
+- La **Edad** es el factor determinante, seguido por el **Número de porductos contratados** 
+- La baja **Actividad**, y el **Balance**, también contrubuyen de manera significativa.
+- Un hallazgo importante fue la identificación de Alemania como factor de riesgo de abandono.  
 
-![pdp_importantes](img/pdp_importantes.png)  
+A continuación se presenta las gráficas de dependencia parcial, las cuales permiten visualizar el comportamiento de la probabilidad de abandono de las variables críticas identificadas de acueerdo con el modelo.
+![variables](img/var_importantes.png)  
+
+![pdp_importantes](img/cinco_variables_pdp.png)  
   
-Como se obsrvan en las gráficas anteriores, las relaciones de estas variables con la probabilidad promedio de abandono son complejas. Es aquí donde podemos contrastar estos resultados y las visulaizaciones hechas en la fase exploratoria. 
-- Inicialmente, el análisis exploratorio sugería una la relación directamente proporcional entre la edad y el número de clientes que abandonan el banco  (El promedio de clientes que abandonan el banco es mayor que el promedio de clientes que no abandonan el banco ). En la gráfica de Depenndencia parcial de la Edad, se observa un mayor riesgo de abandono en clientes menores cuya edad se encuentra entre 20 y 45 años, así como mayores a 80 años. Pero se observa un bajo reisgo de abandono en clientes con edades mayores a 45 años y menores a 80.  
+Las gráficas anteriores permiten permiten . Es aquí donde podemos contrastar estos resultados y las visulaizaciones hechas en la fase exploratoria. 
+
+- Inicialmente, el análisis exploratorio sugería una la relación directamente proporcional entre la edad y el número de clientes que abandonan el banco  (El promedio de clientes que abandonan el banco es mayor que el promedio de clientes que no abandonan el banco ). En la gráfica de dependencia parcial de la Edad, se observa un mayor riesgo de abandono en clientes menores cuya edad se encuentra entre 20 y 45 años, así como mayores a 80 años. Pero se observa un bajo reisgo de abandono en clientes con edades mayores a 45 años y menores a 80.  
 - Análogamente en cleintes 
