@@ -22,14 +22,14 @@ Durante la exploración inicial, se identificaron los siguientes patrones clave:
 ## Entrenamiento y optimización de hiperparámetros mediante validación cruzada para los siguientes algoritmos:
 Se realizó el entrenamiento y la optimización de hiperparámetros mediante validación cruzada. Tomando como caso de evaluación el algoritmo K-Nearest Neighbors (KNN) (optimizado en el número de vecinos y funciones de peso):
 - Fase de Entrenamiento: El modelo reportó un ROC AUC de 0.826, lo cual indica una capacidad sólida para distinguir entre los dos eventos de interés.
--Fase de Prueba: El modelo logró un ROC AUC de 0.821, lo que demuestra una capacidad predictiva consistente ante datos no vistos.
+- Fase de Prueba: El modelo logró un ROC AUC de 0.811, lo que demuestra una capacidad predictiva consistente ante datos no vistos.
 
 | Métrica       | Valor | Interpretación |
 | ------------- | ------|----------------|
 | Precisión     | 0.74 | El modelo clasifica correctamente al 74% del total de clientes.|
 | Sensibilidad  | 0.71 | Logra detectar correctamente al 71% de los clientes que sí abandonaron (foco principal del negocio).|
 | Especificidad | 0.75 | Detecta correctamente al 75% de los clientes que decidieron quedarse|
-| ROC AUC       | 0.82 | Muestra una buena capacidad de discriminación general.|
+| ROC AUC       | 0.81 | Muestra una buena capacidad de discriminación general.|
 
 ![Curva de ROC y Matrz de confusión](img/curva_y_mat.png)
   
@@ -39,6 +39,7 @@ Se realizó el entrenamiento y la optimización de hiperparámetros mediante val
 Una de las ventajas competitivas de este proyecto es que permite analizar el impacto global de cada variable y examinar a clientes específicos para comprender a detalle por qué toman la decisión de irse o quedarse.
 
 Las variables críticas identificadas para la decisión de abandono, son las siguientes :
+
 ![Importancia de variables](img/importancia_var.png)
 
 - La Edad es el factor determinante principal, seguido por el Número de productos contratados.
